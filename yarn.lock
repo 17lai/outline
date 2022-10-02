@@ -1310,19 +1310,19 @@
   dependencies:
     lib0 "^0.2.42"
 
-"@hocuspocus/common@^1.0.0-alpha.11":
-  version "1.0.0-alpha.11"
-  resolved "https://registry.yarnpkg.com/@hocuspocus/common/-/common-1.0.0-alpha.11.tgz#d598d221465338c1d912251105519e88f8486805"
-  integrity sha512-oOddSLUTr8KrC58KSs5YHzr99ZSI4HZdIkYRoqmrusViF8M850uLXgYce7eG7Xaq4KlvXCSDG+wioQRTFXkCaA==
+"@hocuspocus/common@^1.0.0-alpha.11", "@hocuspocus/common@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@hocuspocus/common/-/common-1.0.0-beta.2.tgz#c9e71ce17c96e63bdeaa871581b429b66497ff5f"
+  integrity sha512-1U3b2/Wf6dPnIaAZ27k6Zap827eMubEdRqCF1hoCKVivwWvs0Ogl6I1U+Fb52mgEbjRiwpc5m+ZWvq0gLRxPRw==
   dependencies:
     lib0 "^0.2.47"
 
-"@hocuspocus/provider@^1.0.0-alpha.36":
-  version "1.0.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@hocuspocus/provider/-/provider-1.0.0-alpha.36.tgz#a09dd42baa9c88cbd63027a18edcd3f79823a0cf"
-  integrity sha512-vmrbaS2Si408Gau1vv/xH7ln/QbVJtUZsgLz0DwYYWWGcAJffaU1f89B2+sOL8IGRLclybldrVfZR+tFKBMzRw==
+"@hocuspocus/provider@^1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@hocuspocus/provider/-/provider-1.0.0-beta.2.tgz#3686632c1e407e540e7a0172297a478e5657f561"
+  integrity sha512-wm+26vQcJnJjkIrpmrmS9B1kuiswh8V4VNE/G/OXBHTXEL06R/wD5KSw8iN+2nmvgdl2E4pXtGjV+h3XnbKjkw==
   dependencies:
-    "@hocuspocus/common" "^1.0.0-alpha.11"
+    "@hocuspocus/common" "^1.0.0-beta.2"
     "@lifeomic/attempt" "^3.0.2"
     lib0 "^0.2.46"
     y-protocols "^1.0.5"
