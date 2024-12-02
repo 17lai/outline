@@ -7481,10 +7481,10 @@ data-view-byte-offset@^1.0.0:
     es-errors "^1.3.0"
     is-data-view "^1.0.1"
 
-datadog-metrics@^0.11.2:
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/datadog-metrics/-/datadog-metrics-0.11.2.tgz#3fadf376773b06da21d5527e8574f5f315aee547"
-  integrity sha512-gM2Yc9b0fwpsDtcE4Q573Xy0OJw0tp+vsli3ghZ4QRLGKkQtviKj6EFOxRYtFADV5opP+bIIJIclcWmaI76uvg==
+datadog-metrics@^0.11.4:
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/datadog-metrics/-/datadog-metrics-0.11.4.tgz#6a64ba5d509b48771ac068df116a3091ad204d61"
+  integrity sha512-n84qioHgranFc2KSkEvxWq3yNX43iFp9h+/7WaISMpu9GPL9KrmU9FgX4OSMc9I5tU52J2JU7yCfbpjDFT3/KQ==
   dependencies:
     "@datadog/datadog-api-client" "^1.16.0"
     debug "^4.1.0"
