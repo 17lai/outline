@@ -35,7 +35,7 @@ interface MentionItem extends MenuItem {
 
 type Props = Omit<
   SuggestionsMenuProps<MentionItem>,
-  "renderMenuItem" | "items" | "embeds" | "trigger"
+  "renderMenuItem" | "items" | "embeds"
 >;
 
 function MentionMenu({ search, isActive, ...rest }: Props) {
@@ -84,7 +84,6 @@ function MentionMenu({ search, isActive, ...rest }: Props) {
                 >
                   <Avatar
                     model={user}
-                    showBorder={false}
                     alt={t("Profile picture")}
                     size={AvatarSize.Small}
                   />
@@ -158,6 +157,9 @@ function MentionMenu({ search, isActive, ...rest }: Props) {
       if (item.attrs.type === MentionType.Document) {
         return;
       }
+      if (!documentId) {
+        return;
+      }
       // Check if the mentioned user has access to the document
       const res = await client.post("/documents.users", {
         id: documentId,
@@ -194,7 +196,6 @@ function MentionMenu({ search, isActive, ...rest }: Props) {
       {...rest}
       isActive={isActive}
       filterable={false}
-      trigger="@"
       search={search}
       onSelect={handleSelect}
       renderMenuItem={(item, _index, options) => (

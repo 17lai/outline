@@ -11,7 +11,7 @@ import { ProsemirrorData } from "@shared/types";
 import { ProsemirrorHelper } from "@shared/utils/ProsemirrorHelper";
 import Comment from "~/models/Comment";
 import Document from "~/models/Document";
-import { Avatar, AvatarSize } from "~/components/Avatar";
+import { AvatarSize } from "~/components/Avatar";
 import { useDocumentContext } from "~/components/DocumentContext";
 import Facepile from "~/components/Facepile";
 import Fade from "~/components/Fade";
@@ -54,7 +54,7 @@ function CommentThread({
   collapseThreshold = 5,
   collapseNumDisplayed = 3,
 }: Props) {
-  const [focusedOnMount] = React.useState(focused);
+  const [scrollOnMount] = React.useState(focused && !window.location.hash);
   const { editor } = useDocumentContext();
   const { comments } = useStores();
   const topRef = React.useRef<HTMLDivElement>(null);
@@ -149,9 +149,6 @@ function CommentThread({
           limit={limit}
           overflow={overflow}
           size={AvatarSize.Medium}
-          renderAvatar={(item) => (
-            <Avatar size={AvatarSize.Medium} model={item} />
-          )}
         />
       </ShowMore>
     );
@@ -165,7 +162,7 @@ function CommentThread({
 
   React.useEffect(() => {
     if (focused) {
-      if (focusedOnMount) {
+      if (scrollOnMount) {
         setTimeout(() => {
           if (!topRef.current) {
             return;
@@ -209,7 +206,7 @@ function CommentThread({
         isMarkVisible ? 0 : sidebarAppearDuration
       );
     }
-  }, [focused, focusedOnMount, thread.id]);
+  }, [focused, scrollOnMount, thread.id]);
 
   return (
     <Thread

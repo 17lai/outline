@@ -1454,7 +1454,7 @@ router.post(
   auth(),
   validate(T.DocumentsUnpublishSchema),
   async (ctx: APIContext<T.DocumentsUnpublishReq>) => {
-    const { id } = ctx.input.body;
+    const { id, detach } = ctx.input.body;
     const { user } = ctx.state.auth;
 
     const document = await Document.findByPk(id, {
@@ -1473,14 +1473,14 @@ router.post(
       );
     }
 
-    await document.unpublish(user);
+    // detaching would unset collectionId from document, so save a ref to the affected collectionId.
+    const collectionId = document.collectionId;
+
+    await document.unpublish(user, { detach });
     await Event.createFromContext(ctx, {
       name: "documents.unpublish",
       documentId: document.id,
-      collectionId: document.collectionId,
-      data: {
-        title: document.title,
-      },
+      collectionId,
     });
 
     ctx.body = {
@@ -1680,8 +1680,8 @@ router.post(
   rateLimiter(RateLimiterStrategy.OneHundredPerHour),
   transaction(),
   async (ctx: APIContext<T.DocumentsAddUserReq>) => {
-    const { auth, transaction } = ctx.state;
-    const actor = auth.user;
+    const { transaction } = ctx.state;
+    const { user: actor } = ctx.state.auth;
     const { id, userId, permission } = ctx.input.body;
 
     if (userId === actor.id) {
@@ -1734,30 +1734,18 @@ router.post(
         permission: permission || user.defaultDocumentPermission,
         createdById: actor.id,
       },
-      transaction,
       lock: transaction.LOCK.UPDATE,
+      ...ctx.context,
     });
 
-    if (permission) {
+    if (!isNew && permission) {
       membership.permission = permission;
 
       // disconnect from the source if the permission is manually updated
       membership.sourceId = null;
 
-      await membership.save({ transaction });
+      await membership.save(ctx.context);
     }
-
-    await Event.createFromContext(ctx, {
-      name: "documents.add_user",
-      userId,
-      modelId: membership.id,
-      documentId: document.id,
-      data: {
-        title: document.title,
-        isNew,
-        permission: membership.permission,
-      },
-    });
 
     ctx.body = {
       data: {
@@ -1805,14 +1793,7 @@ router.post(
       rejectOnEmpty: true,
     });
 
-    await membership.destroy({ transaction });
-
-    await Event.createFromContext(ctx, {
-      name: "documents.remove_user",
-      userId,
-      modelId: membership.id,
-      documentId: document.id,
-    });
+    await membership.destroy(ctx.context);
 
     ctx.body = {
       success: true,
