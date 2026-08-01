@@ -9967,9 +9967,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dd-trace@npm:^5.117.0":
-  version: 5.117.0
-  resolution: "dd-trace@npm:5.117.0"
+"dd-trace@npm:^5.118.0":
+  version: 5.118.0
+  resolution: "dd-trace@npm:5.118.0"
   dependencies:
     "@datadog/libdatadog": "npm:0.9.4"
     "@datadog/native-appsec": "npm:11.0.1"
@@ -10005,7 +10005,7 @@ __metadata:
       optional: true
     oxc-parser:
       optional: true
-  checksum: 10c0/14a4dff5897accf5953cfbc7244407ed0ffe25e7e65d0e62f8abfb09d99ce1b0c8f2e7c5c44266cd63e1fd9ef4e0a39fbb76fa73acdc16ea5ebf34d485a9b7ea
+  checksum: 10c0/e358062a2a4d5801c2d7b2807b0a6660d138afbf2c9dbcb91aa39cb4fdb21951befe95a29fce10d800841c3b520b2741df724dff1f32255a300eed44f234bdfa
   languageName: node
   linkType: hard
 
@@ -15558,7 +15558,7 @@ __metadata:
     core-js: "npm:^3.49.0"
     crypto-js: "npm:^4.2.0"
     date-fns: "npm:^3.6.0"
-    dd-trace: "npm:^5.117.0"
+    dd-trace: "npm:^5.118.0"
     diff: "npm:^5.2.2"
     discord-api-types: "npm:^0.38.48"
     email-providers: "npm:^1.14.0"
