@@ -13774,7 +13774,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"katex@npm:^0.16.45, katex@npm:^0.16.47":
+"katex@npm:^0.16.47":
   version: 0.16.47
   resolution: "katex@npm:0.16.47"
   dependencies:
@@ -13782,6 +13782,17 @@ __metadata:
   bin:
     katex: cli.js
   checksum: 10c0/b10f4d0651c60771a48444879e4227255e26e2b2ec061b1ee4b08934863ad2324ba8dbb772455f7768aeb14dfcc13bcd309174a0ddd5ef954a607f644a197710
+  languageName: node
+  linkType: hard
+
+"katex@npm:^0.18.4":
+  version: 0.18.4
+  resolution: "katex@npm:0.18.4"
+  dependencies:
+    commander: "npm:^8.3.0"
+  bin:
+    katex: cli.js
+  checksum: 10c0/a8ecf3079c1748c15856b25f4175a98b6fc5d8e7f567afe8dcf4f63673159036fd2c50527621ec338c6144ae8e18a0103ffd820e175165f6659881c9d9a711b9
   languageName: node
   linkType: hard
 
@@ -15845,7 +15856,7 @@ __metadata:
     js-yaml: "npm:^4.3.1"
     jsdom: "npm:^22.1.0"
     jsonwebtoken: "npm:^9.0.3"
-    katex: "npm:^0.16.45"
+    katex: "npm:^0.18.4"
     kbar: "npm:^1.0.0"
     koa: "npm:^3.0.3"
     koa-body: "npm:^6.0.1"
