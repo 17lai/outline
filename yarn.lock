@@ -14443,9 +14443,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mammoth@npm:^1.11.0":
-  version: 1.11.0
-  resolution: "mammoth@npm:1.11.0"
+"mammoth@npm:^1.12.1":
+  version: 1.12.1
+  resolution: "mammoth@npm:1.12.1"
   dependencies:
     "@xmldom/xmldom": "npm:^0.8.6"
     argparse: "npm:~1.0.3"
@@ -14459,7 +14459,7 @@ __metadata:
     xmlbuilder: "npm:^10.0.0"
   bin:
     mammoth: bin/mammoth
-  checksum: 10c0/20fa5b902a9ec3ed4b86d247f45cf08e9dedb22ad175a156839e921280211b40fbd9db4cabdeb25368fe1fc038dd385deaddfa997e1779e45d663790f80fdff7
+  checksum: 10c0/e6529f4eda032f74b34b3daacba351a88a1cf5529b6c016315522122cdae022d47b6c32280994e20716ca900f708a3ecc6583c720ac7d871db73c4d892110547
   languageName: node
   linkType: hard
 
@@ -15700,7 +15700,7 @@ __metadata:
     koa-useragent: "npm:^4.1.0"
     lint-staged: "npm:^16.4.0"
     mailparser: "npm:^3.9.15"
-    mammoth: "npm:^1.11.0"
+    mammoth: "npm:^1.12.1"
     markdown-it: "npm:^14.3.0"
     markdown-it-container: "npm:^3.0.0"
     markdown-it-emoji: "npm:^3.0.0"
